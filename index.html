@@ -1,0 +1,961 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Financial Guidance Germany | Free Financial Check</title>
+  <meta name="description" content="Understand your finances in Germany. Learn about insurance, tax, investment, retirement and financial planning. Request a free financial check.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #172033;
+      background: #f7f9fc;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e8ebf0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      color: #102a43;
+    }
+
+    .logo span {
+      color: #0b63ce;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #39465a;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #0b63ce;
+    }
+
+    .nav-button {
+      background: #0b63ce;
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 7px;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #eef5ff, #ffffff);
+      padding: 90px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e1efff;
+      color: #0757b5;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      color: #102a43;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #0b63ce;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #536273;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 7px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #0b63ce;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #084e9f;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #0b63ce;
+      border: 1px solid #b9d0ea;
+    }
+
+    .btn-secondary:hover {
+      background: #f1f7ff;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 15px 45px rgba(16, 42, 67, 0.10);
+      border: 1px solid #e7edf5;
+    }
+
+    .hero-card h3 {
+      font-size: 23px;
+      margin-bottom: 20px;
+      color: #102a43;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      margin: 16px 0;
+      color: #465569;
+    }
+
+    .check {
+      color: #0b63ce;
+      font-weight: bold;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #102a43;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #697789;
+      max-width: 680px;
+      margin: auto;
+    }
+
+    /* SERVICES */
+    .services {
+      background: white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #f9fbfe;
+      border: 1px solid #e5ebf3;
+      border-radius: 13px;
+      padding: 28px;
+      transition: 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(16, 42, 67, 0.08);
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #102a43;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .service-card p {
+      color: #647285;
+      font-size: 15px;
+    }
+
+    /* HOW IT WORKS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #0b63ce;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      color: #102a43;
+    }
+
+    .step p {
+      color: #68778a;
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #eef5ff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about h2 {
+      color: #102a43;
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      color: #58687b;
+      margin-bottom: 15px;
+    }
+
+    .about-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(16, 42, 67, 0.08);
+    }
+
+    .about-box h3 {
+      color: #102a43;
+      margin-bottom: 15px;
+    }
+
+    .about-box li {
+      margin: 12px 0;
+      color: #59697c;
+      list-style: none;
+    }
+
+    /* CTA */
+    .cta {
+      background: #102a43;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #d9e4ef;
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    .cta .btn-primary {
+      background: white;
+      color: #102a43;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #102a43;
+    }
+
+    details p {
+      margin-top: 12px;
+      color: #657386;
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #091b2d;
+      color: #cbd7e4;
+      padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    footer h3,
+    footer h4 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #aebdcd;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #294056;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #91a3b7;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-title h2,
+      .about h2,
+      .cta h2 {
+        font-size: 30px;
+      }
+
+      .hero-card {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-container">
+
+      <div class="logo">
+        Financial<span>Guidance</span> Germany
+      </div>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+
+        <a
+          href="https://forms.cloud.microsoft/e/p7GFYK6t9Y"
+          target="_blank"
+          class="nav-button">
+          Free Financial Check
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+
+        <span class="badge">
+          🇩🇪 Financial Awareness for Life in Germany
+        </span>
+
+        <h1>
+          Understand Your Finances.<br>
+          <span>Plan Your Future.</span>
+        </h1>
+
+        <p>
+          Clear and easy-to-understand financial guidance for people
+          living, studying and working in Germany.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            href="https://forms.cloud.microsoft/e/p7GFYK6t9Y"
+            target="_blank"
+            class="btn btn-primary">
+            Get Your Free Financial Check →
+          </a>
+
+          <a href="#services" class="btn btn-secondary">
+            Explore Topics
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-card">
+
+        <h3>What can we look at?</h3>
+
+        <div class="check-item">
+          <span class="check">✓</span>
+          <span>Insurance protection</span>
+        </div>
+
+        <div class="check-item">
+          <span class="check">✓</span>
+          <span>Investment planning</span>
+        </div>
+
+        <div class="check-item">
+          <span class="check">✓</span>
+          <span>Retirement planning</span>
+        </div>
+
+        <div class="check-item">
+          <span class="check">✓</span>
+          <span>Tax awareness</span>
+        </div>
+
+        <div class="check-item">
+          <span class="check">✓</span>
+          <span>Health insurance topics</span>
+        </div>
+
+        <div class="check-item">
+          <span class="check">✓</span>
+          <span>Financial planning for students & employees</span>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Financial Topics</h2>
+
+        <p>
+          Learn about important financial areas that can affect
+          your everyday life and long-term plans in Germany.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Insurance</h3>
+          <p>
+            Understand common insurance types in Germany and
+            how protection can fit different situations.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Investment</h3>
+          <p>
+            Learn the basics of investing, diversification,
+            risk and long-term financial planning.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-icon">👴</div>
+          <h3>Retirement Planning</h3>
+          <p>
+            Understand statutory pension benefits and additional
+            retirement planning considerations.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-icon">🧾</div>
+          <h3>Tax Awareness</h3>
+          <p>
+            Learn basic concepts around income tax and
+            tax-related financial planning in Germany.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-icon">🏥</div>
+          <h3>Health Insurance</h3>
+          <p>
+            Understand important differences and concepts
+            surrounding health insurance in Germany.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3>Students & Employees</h3>
+          <p>
+            Financial awareness for students, part-time workers
+            and full-time employees living in Germany.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>How It Works</h2>
+
+        <p>
+          Start with a simple financial check.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">1</div>
+
+          <h3>Fill Out the Form</h3>
+
+          <p>
+            Tell us a little about your situation
+            through the consultation form.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">2</div>
+
+          <h3>Review Your Situation</h3>
+
+          <p>
+            Your information can help identify the
+            financial topics relevant to you.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">3</div>
+
+          <h3>Discuss Your Questions</h3>
+
+          <p>
+            Use the consultation to discuss your
+            financial questions and possible options.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="container about-grid">
+
+      <div>
+
+        <h2>Financial Awareness Made Simple</h2>
+
+        <p>
+          Financial decisions in Germany can sometimes feel
+          complicated, especially when you are new to the country.
+        </p>
+
+        <p>
+          The goal of this platform is to make financial topics
+          easier to understand so you can ask better questions
+          and make informed decisions.
+        </p>
+
+        <a
+          href="https://forms.cloud.microsoft/e/p7GFYK6t9Y"
+          target="_blank"
+          class="btn btn-primary">
+          Start Your Free Financial Check
+        </a>
+
+      </div>
+
+
+      <div class="about-box">
+
+        <h3>Topics You Can Discuss</h3>
+
+        <ul>
+
+          <li>✓ Your current financial situation</li>
+          <li>✓ Insurance needs and protection</li>
+          <li>✓ Investment questions</li>
+          <li>✓ Retirement planning</li>
+          <li>✓ Tax-related awareness</li>
+          <li>✓ Health insurance topics</li>
+          <li>✓ Financial planning goals</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>Want to Understand Your Financial Situation?</h2>
+
+      <p>
+        Complete the short form and request a free financial check.
+        There is no obligation to proceed with any financial product
+        or service.
+      </p>
+
+      <a
+        href="https://forms.cloud.microsoft/e/p7GFYK6t9Y"
+        target="_blank"
+        class="btn btn-primary">
+        Get Your Free Financial Check →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section id="faq">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Frequently Asked Questions</h2>
+
+      </div>
+
+
+      <div class="faq">
+
+        <details>
+          <summary>Who is this website for?</summary>
+
+          <p>
+            It is intended for people living, studying or working
+            in Germany who want to better understand financial
+            topics.
+          </p>
+
+        </details>
+
+
+        <details>
+          <summary>Is the financial check free?</summary>
+
+          <p>
+            The initial financial check request through the form
+            is free. Any further service or product should be
+            discussed separately before proceeding.
+          </p>
+
+        </details>
+
+
+        <details>
+          <summary>Do I have to purchase anything?</summary>
+
+          <p>
+            No. Submitting the form does not by itself create an
+            obligation to purchase a financial product or service.
+          </p>
+
+        </details>
+
+
+        <details>
+          <summary>Can students contact me?</summary>
+
+          <p>
+            Yes. Students and employees can use the form to
+            request information about relevant financial topics.
+          </p>
+
+        </details>
+
+
+        <details>
+          <summary>Is this website tax or legal advice?</summary>
+
+          <p>
+            No. The information on this website is for general
+            educational and awareness purposes and does not replace
+            individual tax, legal or regulated financial advice.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <h3>FinancialGuidance Germany</h3>
+
+        <p>
+          Financial awareness and education for people
+          living in Germany.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Quick Links</h4>
+
+        <p><a href="#services">Services</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#faq">FAQ</a></p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Connect</h4>
+
+        <p>
+          <a
+            href="YOUR_INSTAGRAM_LINK"
+            target="_blank">
+            Instagram
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://forms.cloud.microsoft/e/p7GFYK6t9Y"
+            target="_blank">
+            Free Financial Check
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <p>
+        © 2026 FinancialGuidance Germany. All rights reserved.
+      </p>
+
+      <p>
+        General educational information only. This website does
+        not constitute individual tax, legal or financial advice.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
+```
